@@ -14,6 +14,3 @@ program
   });
 
 program.parse();
-
-// const options = program.opts();
-// if (options.version) console.log(program.version);
