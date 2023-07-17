@@ -3,7 +3,7 @@ import process from 'node:process';
 import path from 'node:path';
 import fs from 'node:fs';
 
-const getAbsolutFilepath = (filepath) => path.resolve(process.cwd(), filepath);
+const getAbsoluteFilepath = (filepath) => path.resolve(process.cwd(), filepath);
 
 const getJsonObject = (filepath) => JSON.parse(fs.readFileSync(filepath, 'utf-8'));
 
@@ -12,11 +12,11 @@ const getFileKeys = (fileObject) => Object.keys(fileObject);
 const getFormat = (filepath) => path.extname(filepath).slice(1);
 
 const genDiff = (file1, file2) => {
-  const absolutFilepath1 = getAbsolutFilepath(file1);
-  const absolutFilepath2 = getAbsolutFilepath(file2);
+  const absoluteFilepath1 = getAbsoluteFilepath(file1);
+  const absoluteFilepath2 = getAbsoluteFilepath(file2);
 
-  const data1 = getJsonObject(absolutFilepath1);
-  const data2 = getJsonObject(absolutFilepath2);
+  const data1 = getJsonObject(absoluteFilepath1);
+  const data2 = getJsonObject(absoluteFilepath2);
 
   const file1Keys = getFileKeys(data1);
   const file2Keys = getFileKeys(data2);

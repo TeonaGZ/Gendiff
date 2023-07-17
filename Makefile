@@ -8,3 +8,7 @@ lint:
 	npx eslint .
 test:
 	NODE_OPTIONS=--experimental-vm-modules npx jest --watch
+test-coverage:
+	npx jest --coverage
+
+.PHONY: test
