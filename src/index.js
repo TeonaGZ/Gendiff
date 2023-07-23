@@ -11,12 +11,11 @@ const getFileKeys = (fileObject) => Object.keys(fileObject);
 
 const getFormat = (filepath) => path.extname(filepath).slice(1);
 
-const genDiff = (file1, file2) => {
-  const absoluteFilepath1 = getAbsoluteFilepath(file1);
-  const absoluteFilepath2 = getAbsoluteFilepath(file2);
+const getData = (filepah) => getJsonObject(getAbsoluteFilepath(filepah));
 
-  const data1 = getJsonObject(absoluteFilepath1);
-  const data2 = getJsonObject(absoluteFilepath2);
+const genDiff = (file1, file2) => {
+  const data1 = getData(file1);
+  const data2 = getData(file2);
 
   const file1Keys = getFileKeys(data1);
   const file2Keys = getFileKeys(data2);
@@ -40,8 +39,7 @@ const genDiff = (file1, file2) => {
     return `${sameValue}${key}: ${data1[key]}`;
   });
 
-  const result = `{\n${difference.join('\n')}\n}`;
-  return result;
+  return `{\n${difference.join('\n')}\n}`;
 };
 
 export default genDiff;
