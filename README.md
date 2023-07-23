@@ -2,7 +2,7 @@
 [![Actions Status](https://github.com/TeonaGZ/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/TeonaGZ/frontend-project-46/actions)
 
 ### Workflow status:
-[![Workflow status](https://github.com/TeonaGZ/frontend-project-46/actions/workflows/index-check/badge.svg)](https://github.com/TeonaGZ/frontend-project-46/actions)
+[![Workflow status](https://github.com/TeonaGZ/frontend-project-46/actions/workflows/index-check.yml/badge.svg)](https://github.com/TeonaGZ/frontend-project-46/actions)
 
 ### Maintainability status:
 [![Maintainability](https://api.codeclimate.com/v1/badges/ca74950f38f483955b3b/maintainability)](https://codeclimate.com/github/TeonaGZ/frontend-project-46/maintainability)
