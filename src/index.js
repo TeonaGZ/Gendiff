@@ -9,7 +9,7 @@ const getJsonObject = (filepath) => JSON.parse(fs.readFileSync(filepath, 'utf-8'
 
 const getFileKeys = (fileObject) => Object.keys(fileObject);
 
-const getFormat = (filepath) => path.extname(filepath).slice(1);
+// const getFormat = (filepath) => path.extname(filepath).slice(1);
 
 const getData = (filepah) => getJsonObject(getAbsoluteFilepath(filepah));
 
