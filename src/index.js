@@ -2,20 +2,21 @@ import _ from 'lodash';
 import process from 'node:process';
 import path from 'node:path';
 import fs from 'node:fs';
+import parse from './parsers.js';
 
 const getAbsoluteFilepath = (filepath) => path.resolve(process.cwd(), filepath);
 
-const getJsonObject = (filepath) => JSON.parse(fs.readFileSync(filepath, 'utf-8'));
+const getFormat = (filepath) => path.extname(filepath).slice(1);
+
+const getData = (filepath) => fs.readFileSync(getAbsoluteFilepath(filepath), 'utf-8');
+
+const getParsedData = (filepath) => parse(getFormat(filepath), getData(filepath));
 
 const getFileKeys = (fileObject) => Object.keys(fileObject);
 
-// const getFormat = (filepath) => path.extname(filepath).slice(1);
-
-const getData = (filepah) => getJsonObject(getAbsoluteFilepath(filepah));
-
 const genDiff = (file1, file2) => {
-  const data1 = getData(file1);
-  const data2 = getData(file2);
+  const data1 = getParsedData(file1);
+  const data2 = getParsedData(file2);
 
   const file1Keys = getFileKeys(data1);
   const file2Keys = getFileKeys(data2);

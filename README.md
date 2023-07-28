@@ -10,5 +10,6 @@
 ### Test Coverage:
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ca74950f38f483955b3b/test_coverage)](https://codeclimate.com/github/TeonaGZ/frontend-project-46/test_coverage)
 
-## Work example
-[![asciicast](https://asciinema.org/a/6peZC20tz6JARavVwwcbilns7.svg)](https://asciinema.org/a/6peZC20tz6JARavVwwcbilns7)
+## Work examples
+[![json comparison](https://asciinema.org/a/6peZC20tz6JARavVwwcbilns7.svg)](https://asciinema.org/a/6peZC20tz6JARavVwwcbilns7)
+[![yml comparison](https://asciinema.org/a/P2sTI9dAaKTdnNt4c0YRatTTo.svg)](https://asciinema.org/a/P2sTI9dAaKTdnNt4c0YRatTTo)
