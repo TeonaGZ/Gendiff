@@ -13,3 +13,4 @@
 ## Work examples
 [![json comparison](https://asciinema.org/a/6peZC20tz6JARavVwwcbilns7.svg)](https://asciinema.org/a/6peZC20tz6JARavVwwcbilns7)
 [![yml comparison](https://asciinema.org/a/P2sTI9dAaKTdnNt4c0YRatTTo.svg)](https://asciinema.org/a/P2sTI9dAaKTdnNt4c0YRatTTo)
+[![comparison of nested data](https://asciinema.org/a/AYXAswdBuvgOLHuMWzhy47yS5.svg)](https://asciinema.org/a/AYXAswdBuvgOLHuMWzhy47yS5)
