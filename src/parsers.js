@@ -1,7 +1,7 @@
-import yaml from 'js-yaml';
 import path from 'node:path';
 import process from 'node:process';
 import fs from 'node:fs';
+import yaml from 'js-yaml';
 
 const getAbsoluteFilepath = (filepath) => path.resolve(process.cwd(), filepath);
 const getData = (filepath) => fs.readFileSync(getAbsoluteFilepath(filepath), 'utf-8');
