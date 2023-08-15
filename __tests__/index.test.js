@@ -11,21 +11,27 @@ const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8'
 
 const expectedStylishRes = readFile('stylish.txt');
 const expectedPlainRes = readFile('plain.txt');
+const expectedJsonRes = readFile('json.json');
 
 describe('genDiff', () => {
   test('genDiff', () => {
     const file1 = getFixturePath('file1.json');
-    const file2 = getFixturePath('file2.json');
-    expect(genDiff(file1, file2)).toEqual(expectedStylishRes);
-  });
-  test('genDiff', () => {
-    const file1 = getFixturePath('file1.yml');
     const file2 = getFixturePath('file2.yml');
     expect(genDiff(file1, file2)).toEqual(expectedStylishRes);
   });
   test('genDiff', () => {
     const file1 = getFixturePath('file1.yml');
     const file2 = getFixturePath('file2.json');
+    expect(genDiff(file1, file2)).toEqual(expectedStylishRes);
+  });
+  test('genDiff', () => {
+    const file1 = getFixturePath('file1.yml');
+    const file2 = getFixturePath('file2.json');
     expect(genDiff(file1, file2, 'plain')).toEqual(expectedPlainRes);
+  });
+  test('genDiff', () => {
+    const file1 = getFixturePath('file1.json');
+    const file2 = getFixturePath('file2.json');
+    expect(genDiff(file1, file2, 'json')).toEqual(expectedJsonRes);
   });
 });
