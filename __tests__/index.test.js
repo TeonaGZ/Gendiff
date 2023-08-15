@@ -19,16 +19,16 @@ const ymlFile1 = getFixturePath('file1.yml');
 const ymlFile2 = getFixturePath('file2.yml');
 
 describe('genDiff', () => {
-  test('genDiff', () => {
+  test('stylish genDiff for json', () => {
     expect(genDiff(jsonFile1, jsonFile2)).toEqual(expectedStylishRes);
   });
-  test('genDiff', () => {
+  test('stylish genDiff for yml', () => {
     expect(genDiff(ymlFile1, ymlFile2)).toEqual(expectedStylishRes);
   });
-  test('genDiff', () => {
+  test('plain genDiff', () => {
     expect(genDiff(jsonFile1, ymlFile2, 'plain')).toEqual(expectedPlainRes);
   });
-  test('genDiff', () => {
+  test('json genDiff', () => {
     expect(genDiff(ymlFile1, jsonFile2, 'json')).toEqual(expectedJsonRes);
   });
 });
