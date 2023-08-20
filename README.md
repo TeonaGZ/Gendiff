@@ -1,4 +1,4 @@
-![Picture for the app](./contrast1.jpg)
+![Picture for the app](./cover.jpg)
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/TeonaGZ/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/TeonaGZ/frontend-project-46/actions)
 [![Workflow status](https://github.com/TeonaGZ/frontend-project-46/actions/workflows/index-check.yml/badge.svg)](https://github.com/TeonaGZ/frontend-project-46/actions)
