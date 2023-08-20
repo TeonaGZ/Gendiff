@@ -12,7 +12,7 @@ const format = (tree, formatName = 'stylish') => {
   if (formatName === 'json') {
     return getJsonData(tree);
   }
-  throw new Error(`Unknown file format: ${format}`);
+  throw new Error(`Unknown file format: ${formatName}`);
 };
 
 export default format;
