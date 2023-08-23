@@ -29,7 +29,7 @@ const getPlainData = (diffTree) => {
           case 'deleted':
             return `Property '${getCurrentProperty(data, property)}' was removed`;
           case 'changed':
-            return `Property '${getCurrentProperty(data, property)}' was updated. From ${stringify(data.oldValue)} to ${stringify(data.newValue)}`;
+            return `Property '${getCurrentProperty(data, property)}' was updated. From ${stringify(data.value1)} to ${stringify(data.value2)}`;
           default:
             throw new Error(`Unknown type: ${data.type}`);
         }

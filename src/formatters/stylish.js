@@ -10,8 +10,8 @@ const stringify = (data, depth) => {
   if (!_.isObject(data)) {
     return String(data);
   }
-  const arrayData = Object.entries(data);
-  const lines = arrayData.map(([key, value]) => `${getIndent(depth)}  ${key}: ${stringify(value, depth + 1)}`);
+  const entriesData = Object.entries(data);
+  const lines = entriesData.map(([key, value]) => `${getIndent(depth)}  ${key}: ${stringify(value, depth + 1)}`);
   return ['{', ...lines, `${getBracketIndent(depth)}}`].join('\n');
 };
 
@@ -31,7 +31,7 @@ const getStylishData = (diffTree) => {
         case 'deleted':
           return `${indent}${oldValue}${data.key}: ${stringify(data.value, depth + 1)}`;
         case 'changed':
-          return `${indent}${oldValue}${data.key}: ${stringify(data.oldValue, depth + 1)}\n${indent}${newValue}${data.key}: ${stringify(data.newValue, depth + 1)}`;
+          return `${indent}${oldValue}${data.key}: ${stringify(data.value1, depth + 1)}\n${indent}${newValue}${data.key}: ${stringify(data.value2, depth + 1)}`;
         case 'unchanged':
           return `${indent}${sameValue}${data.key}: ${stringify(data.value, depth + 1)}`;
         default:

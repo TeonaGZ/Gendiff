@@ -1,18 +1,17 @@
 import getStylishData from './stylish.js';
 import getPlainData from './plain.js';
-import getJsonData from './json.js';
 
 const format = (tree, formatName = 'stylish') => {
-  if (formatName === 'stylish') {
-    return getStylishData(tree);
+  switch (formatName) {
+    case 'stylish':
+      return getStylishData(tree);
+    case 'plain':
+      return getPlainData(tree);
+    case 'json':
+      return JSON.stringify(tree);
+    default:
+      throw new Error(`Unknown file format: ${formatName}`);
   }
-  if (formatName === 'plain') {
-    return getPlainData(tree);
-  }
-  if (formatName === 'json') {
-    return getJsonData(tree);
-  }
-  throw new Error(`Unknown file format: ${formatName}`);
 };
 
 export default format;
