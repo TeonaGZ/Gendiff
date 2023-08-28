@@ -19,8 +19,10 @@ const stringify = (data, depth) => {
 
 const iter = (node, depth) => node.map((data) => {
   switch (data.type) {
-    case 'nested':
-      return `${getIndent(depth)}${unchangedSign}${data.key}: {\n${iter(data.children, depth + 1).join('')}${getIndent(depth)}  }\n`;
+    case 'nested': {
+      const lines = iter(data.children, depth + 1).join('');
+      return `${getIndent(depth)}${unchangedSign}${data.key}: {\n${lines}${getIndent(depth)}${unchangedSign}}\n`;
+    }
     case 'added':
       return `${getIndent(depth)}${addSign}${data.key}: ${stringify(data.value, depth)}\n`;
     case 'deleted':
