@@ -20,25 +20,25 @@ const stringify = (data, depth) => {
 const iter = (node, depth) => node.map((data) => {
   switch (data.type) {
     case 'nested': {
-      const lines = iter(data.children, depth + 1).join('');
-      return `${getIndent(depth)}${unchangedSign}${data.key}: {\n${lines}${getIndent(depth)}${unchangedSign}}\n`;
+      const lines = iter(data.children, depth + 1).join('\n');
+      return `${getIndent(depth)}${unchangedSign}${data.key}: {\n${lines}\n${getIndent(depth)}${unchangedSign}}`;
     }
     case 'added':
-      return `${getIndent(depth)}${addSign}${data.key}: ${stringify(data.value, depth)}\n`;
+      return `${getIndent(depth)}${addSign}${data.key}: ${stringify(data.value, depth)}`;
     case 'deleted':
-      return `${getIndent(depth)}${deleteSign}${data.key}: ${stringify(data.value, depth)}\n`;
+      return `${getIndent(depth)}${deleteSign}${data.key}: ${stringify(data.value, depth)}`;
     case 'changed': {
       const line1 = `${getIndent(depth)}${deleteSign}${data.key}: ${stringify(data.value1, depth)}`;
       const line2 = `${getIndent(depth)}${addSign}${data.key}: ${stringify(data.value2, depth)}`;
-      return `${line1}\n${line2}\n`;
+      return `${line1}\n${line2}`;
     }
     case 'unchanged':
-      return `${getIndent(depth)}${unchangedSign}${data.key}: ${stringify(data.value, depth)}\n`;
+      return `${getIndent(depth)}${unchangedSign}${data.key}: ${stringify(data.value, depth)}`;
     default:
       throw new Error(`Unknown type: ${data.type}`);
   }
 });
 
-const getStylishData = (diffTree) => `{\n${iter(diffTree, 1).join('')}}`;
+const getStylishData = (diffTree) => `{\n${iter(diffTree, 1).join('\n')}\n}`;
 
 export default getStylishData;
